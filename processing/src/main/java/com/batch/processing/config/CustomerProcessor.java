@@ -1,17 +1,22 @@
 package com.batch.processing.config;
 
 import com.batch.processing.entity.Customer;
+import com.batch.processing.entity.CustomerDetails;
 import org.springframework.batch.item.ItemProcessor;
 
-public class CustomerProcessor implements ItemProcessor<Customer,Customer> {
+public class CustomerProcessor implements ItemProcessor<Customer, CustomerDetails> {
+
     @Override
-    public Customer process(Customer customer) throws Exception {
-//        if (customer.getCountry().equalsIgnoreCase("China")){
-//            return customer;
-//        }
-//        else {
-//            return  null;
-//        }
-        return customer;
+    public CustomerDetails process(Customer item) throws Exception {
+        CustomerDetails customerDetails=new CustomerDetails();
+        customerDetails.setId(item.getId());
+        customerDetails.setDob(item.getDob());
+        customerDetails.setEmail(item.getEmail());
+        customerDetails.setCountry(item.getCountry());
+        customerDetails.setGender(item.getGender());
+        customerDetails.setContactNo(item.getContactNo());
+        customerDetails.setFirstName(item.getFirstName());
+        customerDetails.setLastName(item.getLastName());
+        return customerDetails;
     }
 }
