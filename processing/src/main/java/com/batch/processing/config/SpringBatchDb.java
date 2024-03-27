@@ -69,7 +69,7 @@ public class SpringBatchDb {
                 .reader(reader())
                 .processor(processor())
                 .writer(write())
-                .listener(new DelayingChunkListener(TimeUnit.SECONDS.toMillis(10))) // Set delay here
+                .listener(new DelayingChunkListener(TimeUnit.SECONDS.toMillis(2))) // Set delay here
                 .taskExecutor(taskExecutor())
                 .build();
     }

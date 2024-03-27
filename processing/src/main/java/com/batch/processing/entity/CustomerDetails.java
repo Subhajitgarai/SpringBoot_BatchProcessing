@@ -29,4 +29,6 @@ public class CustomerDetails {
     private String country;
     @Column(name = "DOB")
     private String dob;
+    @Column(name = "FULL_NAME")
+    private String fullName;
 }

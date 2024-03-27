@@ -19,6 +19,7 @@ public class DelayingChunkListener implements ChunkListener {
     @Override
     public void afterChunk(ChunkContext context) {
         try {
+
             Thread.sleep(delayInMilliseconds);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
